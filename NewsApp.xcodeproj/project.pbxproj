@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5CCDFCA82A0FF47300FA8300 /* NAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCDFCA72A0FF47300FA8300 /* NAButton.swift */; };
+		5CCDFCAB2A0FF73C00FA8300 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCDFCAA2A0FF73C00FA8300 /* User.swift */; };
+		5CCDFCAE2A0FF7AD00FA8300 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCDFCAD2A0FF7AD00FA8300 /* Extensions.swift */; };
+		5CCF85972A0FDFBE00CF11CB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF85962A0FDFBE00CF11CB /* LoginView.swift */; };
+		5CCF859A2A0FE02D00CF11CB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF85992A0FE02D00CF11CB /* LoginViewModel.swift */; };
+		5CCF859D2A0FE0B100CF11CB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5CCF859C2A0FE0B100CF11CB /* FirebaseAuth */; };
+		5CCF859F2A0FE0B100CF11CB /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5CCF859E2A0FE0B100CF11CB /* FirebaseFirestore */; };
+		5CCF85A12A0FE0B100CF11CB /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5CCF85A02A0FE0B100CF11CB /* FirebaseFirestoreSwift */; };
+		5CCF85A32A0FE0B100CF11CB /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 5CCF85A22A0FE0B100CF11CB /* FirebaseInAppMessaging-Beta */; };
+		5CCF85A52A0FE0B100CF11CB /* FirebaseInAppMessagingSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 5CCF85A42A0FE0B100CF11CB /* FirebaseInAppMessagingSwift-Beta */; };
+		5CCF85A72A0FE0B100CF11CB /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 5CCF85A62A0FE0B100CF11CB /* FirebaseMessaging */; };
+		5CCF85A92A0FE0B100CF11CB /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 5CCF85A82A0FE0B100CF11CB /* FirebaseStorage */; };
+		5CCF85AB2A0FE2F200CF11CB /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF85AA2A0FE2F200CF11CB /* RegisterViewModel.swift */; };
+		5CCF85AD2A0FE33900CF11CB /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF85AC2A0FE33900CF11CB /* RegisterView.swift */; };
 		7709B6B12A0BD859004DBE6F /* NewsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7709B6B02A0BD859004DBE6F /* NewsAppApp.swift */; };
 		7709B6B32A0BD859004DBE6F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7709B6B22A0BD859004DBE6F /* ContentView.swift */; };
 		7709B6B52A0BD85C004DBE6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7709B6B42A0BD85C004DBE6F /* Assets.xcassets */; };
@@ -34,6 +48,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5CCDFCA72A0FF47300FA8300 /* NAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NAButton.swift; sourceTree = "<group>"; };
+		5CCDFCAA2A0FF73C00FA8300 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5CCDFCAD2A0FF7AD00FA8300 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5CCF85962A0FDFBE00CF11CB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		5CCF85992A0FE02D00CF11CB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		5CCF85AA2A0FE2F200CF11CB /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		5CCF85AC2A0FE33900CF11CB /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		7709B6AD2A0BD859004DBE6F /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7709B6B02A0BD859004DBE6F /* NewsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAppApp.swift; sourceTree = "<group>"; };
 		7709B6B22A0BD859004DBE6F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +72,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CCF85A72A0FE0B100CF11CB /* FirebaseMessaging in Frameworks */,
+				5CCF859D2A0FE0B100CF11CB /* FirebaseAuth in Frameworks */,
+				5CCF859F2A0FE0B100CF11CB /* FirebaseFirestore in Frameworks */,
+				5CCF85A52A0FE0B100CF11CB /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
+				5CCF85A92A0FE0B100CF11CB /* FirebaseStorage in Frameworks */,
+				5CCF85A12A0FE0B100CF11CB /* FirebaseFirestoreSwift in Frameworks */,
+				5CCF85A32A0FE0B100CF11CB /* FirebaseInAppMessaging-Beta in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +99,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5CCDFCA42A0FF31C00FA8300 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5CCDFCA72A0FF47300FA8300 /* NAButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		5CCDFCA92A0FF72F00FA8300 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5CCDFCAA2A0FF73C00FA8300 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5CCDFCAC2A0FF79C00FA8300 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				5CCDFCAD2A0FF7AD00FA8300 /* Extensions.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		5CCF85952A0FDFB100CF11CB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5CCDFCA42A0FF31C00FA8300 /* Components */,
+				5CCF85962A0FDFBE00CF11CB /* LoginView.swift */,
+				5CCF85AC2A0FE33900CF11CB /* RegisterView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5CCF85982A0FDFFF00CF11CB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5CCF85992A0FE02D00CF11CB /* LoginViewModel.swift */,
+				5CCF85AA2A0FE2F200CF11CB /* RegisterViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		7709B6A42A0BD859004DBE6F = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +165,10 @@
 		7709B6AF2A0BD859004DBE6F /* NewsApp */ = {
 			isa = PBXGroup;
 			children = (
+				5CCDFCAC2A0FF79C00FA8300 /* Other */,
+				5CCDFCA92A0FF72F00FA8300 /* Models */,
+				5CCF85982A0FDFFF00CF11CB /* ViewModels */,
+				5CCF85952A0FDFB100CF11CB /* Views */,
 				7709B6B02A0BD859004DBE6F /* NewsAppApp.swift */,
 				7709B6B22A0BD859004DBE6F /* ContentView.swift */,
 				7709B6B42A0BD85C004DBE6F /* Assets.xcassets */,
@@ -143,6 +218,15 @@
 			dependencies = (
 			);
 			name = NewsApp;
+			packageProductDependencies = (
+				5CCF859C2A0FE0B100CF11CB /* FirebaseAuth */,
+				5CCF859E2A0FE0B100CF11CB /* FirebaseFirestore */,
+				5CCF85A02A0FE0B100CF11CB /* FirebaseFirestoreSwift */,
+				5CCF85A22A0FE0B100CF11CB /* FirebaseInAppMessaging-Beta */,
+				5CCF85A42A0FE0B100CF11CB /* FirebaseInAppMessagingSwift-Beta */,
+				5CCF85A62A0FE0B100CF11CB /* FirebaseMessaging */,
+				5CCF85A82A0FE0B100CF11CB /* FirebaseStorage */,
+			);
 			productName = NewsApp;
 			productReference = 7709B6AD2A0BD859004DBE6F /* NewsApp.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +299,9 @@
 				Base,
 			);
 			mainGroup = 7709B6A42A0BD859004DBE6F;
+			packageReferences = (
+				5CCF859B2A0FE0B100CF11CB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 7709B6AE2A0BD859004DBE6F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,6 +344,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CCF859A2A0FE02D00CF11CB /* LoginViewModel.swift in Sources */,
+				5CCF85AB2A0FE2F200CF11CB /* RegisterViewModel.swift in Sources */,
+				5CCF85972A0FDFBE00CF11CB /* LoginView.swift in Sources */,
+				5CCF85AD2A0FE33900CF11CB /* RegisterView.swift in Sources */,
+				5CCDFCA82A0FF47300FA8300 /* NAButton.swift in Sources */,
+				5CCDFCAE2A0FF7AD00FA8300 /* Extensions.swift in Sources */,
+				5CCDFCAB2A0FF73C00FA8300 /* User.swift in Sources */,
 				7709B6B32A0BD859004DBE6F /* ContentView.swift in Sources */,
 				7709B6B12A0BD859004DBE6F /* NewsAppApp.swift in Sources */,
 			);
@@ -577,6 +671,55 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5CCF859B2A0FE0B100CF11CB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5CCF859C2A0FE0B100CF11CB /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CCF859B2A0FE0B100CF11CB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		5CCF859E2A0FE0B100CF11CB /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CCF859B2A0FE0B100CF11CB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		5CCF85A02A0FE0B100CF11CB /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CCF859B2A0FE0B100CF11CB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		5CCF85A22A0FE0B100CF11CB /* FirebaseInAppMessaging-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CCF859B2A0FE0B100CF11CB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseInAppMessaging-Beta";
+		};
+		5CCF85A42A0FE0B100CF11CB /* FirebaseInAppMessagingSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CCF859B2A0FE0B100CF11CB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseInAppMessagingSwift-Beta";
+		};
+		5CCF85A62A0FE0B100CF11CB /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CCF859B2A0FE0B100CF11CB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		5CCF85A82A0FE0B100CF11CB /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CCF859B2A0FE0B100CF11CB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7709B6A52A0BD859004DBE6F /* Project object */;
 }
