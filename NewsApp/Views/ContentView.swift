@@ -9,12 +9,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var viewModel = ContentViewModel()
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, news! //David")
+            if viewModel.isSignedIn, !viewModel.currentUserId.isEmpty{
+                TabView{
+                    
+                    
+                }
+            }else{
+                LoginView()
+            }
         }
         .padding()
     }
@@ -22,6 +27,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
+        
         ContentView()
     }
 }
