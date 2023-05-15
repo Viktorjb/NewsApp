@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     @StateObject var viewModel = LoginViewModel()
+    @State var isAdmin = false
     
     var body: some View {
         
@@ -35,8 +36,18 @@ struct LoginView: View {
                         .textFieldStyle(DefaultTextFieldStyle())
                     
                     NAButton(title: "Login", background: .green){
-                        viewModel.login()
+                        if viewModel.email == "admin@newsfeed.se" && viewModel.password == "12345678" {
+                            isAdmin = true
+                            return
+                        }
+                            viewModel.login()
+                        
                     }
+                    .navigationBarTitle("Admin View")
+                    .fullScreenCover(isPresented: $isAdmin) {
+                        AdminView()
+                    }
+                    
    
                 }
                 .background(Color(red: 47/255, green:79/255,blue: 79/255))
