@@ -19,7 +19,7 @@ struct NewsAppApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            ProfileView()
+            ContentView()
         }
     }
 }
