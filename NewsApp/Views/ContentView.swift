@@ -22,7 +22,7 @@ struct ContentView: View {
                 })
                 .padding()
                 .offset(x: 150)
-                .navigationBarTitle("profile View")
+                .navigationBarTitle("profile Vie")
                 .fullScreenCover(isPresented: $isprofile) {
                     ProfileView()
                 }
