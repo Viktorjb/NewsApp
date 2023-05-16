@@ -6,16 +6,44 @@
 //
 
 import Foundation
+import Firebase
 
-struct ArticleLists /*: Codable*/{
-    let requestedArticles : [Article]
-    let publishedArticles : [Article]
+struct ArticleLists{
+    //Articles that have been written and submitted but not yet approved
+    var requestedArticles : [Article]
+    //Approved articles that every user can see
+    var publishedArticles : [Article]
     
-    func updateRequestedArticles(){
-        //Clear requestedArticles and download data from firebase
-    }
+    let db = Firestore.firestore()
+    
+    
+    /*func updateRequestedArticles(){
+        //Clear requestedArticles and download data from firebase db.collection("RequestedArticles")
+        db.collection("RequestedArticles").addSnapshotListener() {
+            snapshot, err in
+            
+            guard let snapshot = snapshot else {return}
+            
+            if let err = err {
+                print("Error getting document: \(err)")
+            } else {
+                self.requestedArticles.removeAll()
+                for document in snapshot.documents{
+                    do {
+                        let article = try document.data(as : Article.self)
+                        self.requestedArticles.append(article)
+                    } catch {
+                        print("Error reading from Database")
+                    }
+                }
+            }
+            
+        }
+    }*/
     
     func updatePublishedArticles(){
         //Clear publishedArticles and download data from firebase
     }
+    
+    
 }
