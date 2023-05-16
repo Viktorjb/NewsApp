@@ -16,8 +16,12 @@ struct ArticleLists{
     
     let db = Firestore.firestore()
     
+    init() {
+        self.requestedArticles = [Article]()
+        self.publishedArticles = [Article]()
+    }
     
-    /*func updateRequestedArticles(){
+    /*mutating func updateRequestedArticles(){
         //Clear requestedArticles and download data from firebase db.collection("RequestedArticles")
         db.collection("RequestedArticles").addSnapshotListener() {
             snapshot, err in

@@ -17,7 +17,7 @@ struct Article : Codable{
     //var picture: UIImage? // Temporarily commented out to conform to "codable"
     
     
-    //private var unformattedDate = Date() // Temporarily commented out to conform to "codable"
+    private var unformattedDate = Date()
     //private let dateFormatter = DateFormatter() // Temporarily commented out to conform to "codable"
     
     init(heading: String, content: String, picture: UIImage? = nil) {
@@ -29,7 +29,6 @@ struct Article : Codable{
     }
     
     var date : String {
-        var unformattedDate = Date() // Temporarily moved here to conform to "codable"
         let dateFormatter = DateFormatter() // Temporarily moved here to conform to "codable"
         return dateFormatter.string(from: unformattedDate)
     }
