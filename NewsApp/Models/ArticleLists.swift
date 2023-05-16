@@ -8,12 +8,12 @@
 import Foundation
 import Firebase
 
-struct ArticleLists{
+class ArticleLists{
     //Articles that have been written and submitted but not yet approved
     var requestedArticles : [Article]
     //Approved articles that every user can see
     var publishedArticles : [Article]
-    
+    //Database
     let db = Firestore.firestore()
     
     init() {
@@ -21,8 +21,8 @@ struct ArticleLists{
         self.publishedArticles = [Article]()
     }
     
-    /*mutating func updateRequestedArticles(){
-        //Clear requestedArticles and download data from firebase db.collection("RequestedArticles")
+    //Start a snapshotlistener for collection("RequestedArticles") and download data to requestedArticles
+    func updateRequestedArticles(){
         db.collection("RequestedArticles").addSnapshotListener() {
             snapshot, err in
             
@@ -41,12 +41,30 @@ struct ArticleLists{
                     }
                 }
             }
-            
         }
-    }*/
+    }
     
+    //Start a snapshotlistener for collection("PublishedArticles") and download data to publishedArticles
     func updatePublishedArticles(){
-        //Clear publishedArticles and download data from firebase
+        db.collection("PublishedArticles").addSnapshotListener() {
+            snapshot, err in
+            
+            guard let snapshot = snapshot else {return}
+            
+            if let err = err {
+                print("Error getting document: \(err)")
+            } else {
+                self.requestedArticles.removeAll()
+                for document in snapshot.documents{
+                    do {
+                        let article = try document.data(as : Article.self)
+                        self.requestedArticles.append(article)
+                    } catch {
+                        print("Error reading from Database")
+                    }
+                }
+            }
+        }
     }
     
     
