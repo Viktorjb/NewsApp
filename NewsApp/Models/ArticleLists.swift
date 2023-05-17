@@ -16,10 +16,14 @@ class ArticleLists{
     //Database
     let db = Firestore.firestore()
     
+    
     init() {
         self.requestedArticles = [Article]()
         self.publishedArticles = [Article]()
     }
+    
+    
+    
     
     //Start a snapshotlistener for collection("RequestedArticles") and download data to requestedArticles
     func updateRequestedArticles(){
