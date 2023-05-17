@@ -12,7 +12,17 @@ struct NewsFeedView: View {
     
     var body: some View {
         ScrollView {
-            //Hämta alla artiklar
+            VStack(spacing: 20) {
+                ForEach(viewModel.articles, id: \.heading) { article in
+                    Text(article.heading)
+                        .font(.title)
+                        .bold()
+                }
+            }
+            .padding()
+        }
+        .onAppear {
+            viewModel.articleMockData()
         }
     }
 }
