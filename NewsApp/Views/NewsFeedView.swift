@@ -9,18 +9,27 @@ import SwiftUI
 
 struct NewsFeedView: View {
     @StateObject var viewModel = NewsFeedViewModel()
-    
+
     var body: some View {
         ScrollView {
-            VStack(spacing: 20) {
+            VStack {
                 ForEach(viewModel.articles, id: \.heading) { article in
-                    Text(article.heading)
-                        .font(.title)
-                        .bold()
+                    HStack {
+                        Text(article.heading)
+                            .font(.title)
+                            .bold()
+                        
+                        Spacer()
+                        
+                        Image("Image")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                    }
+                    
                 }
             }
-            .padding()
         }
+        .edgesIgnoringSafeArea(.top)
         .onAppear {
             viewModel.articleMockData()
         }
@@ -32,3 +41,4 @@ struct NewsFeedView_Previews: PreviewProvider {
         NewsFeedView()
     }
 }
+

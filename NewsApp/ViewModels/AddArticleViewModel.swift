@@ -26,5 +26,10 @@ class AddArticleViewModel: ObservableObject{
         }
     }
     
+    func uploadImage(_ image: UIImage) {
+            // Handle the image upload logic
+            // You can access the selected image here and perform the necessary operations
+        }
+    
     
 }
