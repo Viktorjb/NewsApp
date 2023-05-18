@@ -24,8 +24,6 @@ struct AddArticleView: View {
             .background(Color(red: 240/255, green: 240/255, blue: 245/255))
         
     }
-    
-    
 }
 
 struct AddArticleView_Previews: PreviewProvider {

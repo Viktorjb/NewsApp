@@ -22,7 +22,7 @@ struct LoginView: View {
                 Text("Login to news app")
                     .foregroundColor(Color.black)
                     .font(.system(size: 30))
-
+                
                 Form{
                     if !viewModel.errorMessage.isEmpty{
                         Text(viewModel.errorMessage)
@@ -40,7 +40,7 @@ struct LoginView: View {
                             isAdmin = true
                             return
                         }
-                            viewModel.login()
+                        viewModel.login()
                         
                     }
                     .navigationBarTitle("Admin View")
@@ -48,23 +48,19 @@ struct LoginView: View {
                         AdminView()
                     }
                     
-   
+                    
                 }
                 .background(Color(red: 47/255, green:79/255,blue: 79/255))
                 
                 //Create account
                 
-                    Text("Don't have an account yet?")
-                        .foregroundColor(Color.black)
-                    NavigationLink("Create an account",
-                                   destination: RegisterView())
-                    }
-                
-                
+                Text("Don't have an account yet?")
+                    .foregroundColor(Color.black)
+                NavigationLink("Create an account",
+                               destination: RegisterView())
             }
-        VStack{
-            Rectangle().fill().background(Color.black)
-                .frame(height: 150)
+            
+            
         }
             
         }
