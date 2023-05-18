@@ -10,6 +10,7 @@ import SwiftUI
 import FirebaseAuth
 
 struct ContentView: View {
+    @State var isAddArticle = false
     @StateObject var viewModel = ContentViewModel()
     @State var isprofile = false
     var body: some View {
@@ -26,10 +27,24 @@ struct ContentView: View {
                 .fullScreenCover(isPresented: $isprofile) {
                     ProfileView()
                 }
+                
                 TabView{
                     
                     
                 }
+                Spacer()
+                
+                Button(action: {
+                    isAddArticle = true
+                }, label: {
+                    Text("Submit article")
+                })
+                
+                .navigationBarTitle("add article")
+                .sheet(isPresented: $isAddArticle) {
+                    AddArticleView()
+                }
+                
             }else{
                 LoginView()
             }
