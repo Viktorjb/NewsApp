@@ -20,7 +20,7 @@ struct AddArticleView: View {
                 TextEditor(text: $viewModel.titleContent).padding(30).background(Color(red: 240/255, green: 240/255, blue: 245/255))
                     .frame(height: 100)
                 TextEditor(text: $viewModel.textContent).padding(30).background(Color(red: 240/255, green: 240/255, blue: 245/255))
-                Button("Publish", action: {//viewModel.requestArticle()
+                Button("Publish", action: {viewModel.requestArticle()
                     showingAlert = true
                 }
                 ).alert(viewModel.alertMessage, isPresented: $showingAlert) {
