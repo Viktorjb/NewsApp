@@ -8,11 +8,11 @@
 import Foundation
 import Firebase
 
-class ArticleLists{
+class ArticleLists : ObservableObject{
     //Articles that have been written and submitted but not yet approved
-    var requestedArticles : [Article]
+    @Published var requestedArticles : [Article]
     //Approved articles that every user can see
-    var publishedArticles : [Article]
+    @Published var publishedArticles : [Article]
     //Database
     let db = Firestore.firestore()
     

@@ -15,6 +15,9 @@ class AddArticleViewModel: ObservableObject{
     @Published var titleContent : String = "Enter Title..."
     @Published var textContent : String = "Enter your article text here..."
     
+    //Message for the posting alert pop-up
+    let alertMessage = "Thank you for your submission. Your article will soon be inspected by an admin. If approved, it will be published for other users to see."
+    
     init(){}
     
     func requestArticle(){
