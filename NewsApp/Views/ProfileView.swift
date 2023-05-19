@@ -9,7 +9,9 @@ import SwiftUI
 import FirebaseAuth
 
 struct ProfileView: View {
+    
     var body: some View {
+        
         Text("Your Profile")
             .font(.system(size: 30))
         Spacer()
