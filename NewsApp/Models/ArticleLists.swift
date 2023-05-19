@@ -58,11 +58,11 @@ class ArticleLists : ObservableObject{
             if let err = err {
                 print("Error getting document: \(err)")
             } else {
-                self.requestedArticles.removeAll()
+                self.publishedArticles.removeAll()
                 for document in snapshot.documents{
                     do {
                         let article = try document.data(as : Article.self)
-                        self.requestedArticles.append(article)
+                        self.publishedArticles.append(article)
                     } catch {
                         print("Error reading from Database")
                     }
