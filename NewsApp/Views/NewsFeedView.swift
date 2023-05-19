@@ -9,9 +9,11 @@ import SwiftUI
 
 struct NewsFeedView: View {
     @StateObject var viewModel = NewsFeedViewModel()
-    @State private var isProfileActive: Bool = false
+    //@State private var isProfileActive: Bool = false
     @State private var isMenuActive: Bool = false
-    @State private var menuOffset: CGFloat = -UIScreen.main.bounds.width // Initial offset to hide the menu
+    @State private var menuOffset: CGFloat = -UIScreen.main.bounds.width
+    @State private var latestNewsSelected = false
+    @State private var allNewsSelected = false
     
     var body: some View {
         NavigationView {
@@ -27,6 +29,49 @@ struct NewsFeedView: View {
                     }
                     .edgesIgnoringSafeArea(.top)
                     .frame(height: 110) // Adjust the height as needed
+                    HStack{
+                        ZStack {
+                            Button(action: {
+                                latestNewsSelected.toggle()
+                                allNewsSelected = false // Deselect the "All news" button
+                            }) {
+                                Text("Latest news")
+                                    .font(.title2)
+                                    .bold()
+                                    .padding(.leading, 30)
+                                    .foregroundColor(latestNewsSelected ? .orange : .white)
+                            }
+                            
+                            Rectangle()
+                                .fill(Color.orange)
+                                .frame(height: 2)
+                                .padding(.top, 45) // Adjust the padding to align the thin line with the selected button
+                                .opacity(latestNewsSelected ? 1 : 0)
+                        }
+                        
+                        Spacer()
+                        
+                        ZStack {
+                            Button(action: {
+                                allNewsSelected.toggle()
+                                latestNewsSelected = false // Deselect the "Latest news" button
+                            }) {
+                                Text("All news")
+                                    .font(.title2)
+                                    .bold()
+                                    .padding(10)
+                                    .padding(.trailing, 30)
+                                    .foregroundColor(allNewsSelected ? .orange : .white)
+                            }
+                            
+                            Rectangle()
+                                .fill(Color.orange)
+                                .frame(height: 2)
+                                .padding(.top, 45) // Adjust the padding to align the thin line with the selected button
+                                .opacity(allNewsSelected ? 1 : 0)
+                        }
+                    }
+                    .background(Color.gray)
                     
                     VStack {
                         ScrollView {
@@ -55,11 +100,11 @@ struct NewsFeedView: View {
                 }
                 
                 // Menu view
-                MenuView(isMenuActive: $isMenuActive)                    .frame(width: UIScreen.main.bounds.width * 0.8) // Adjust the width as needed
+                MenuView(isMenuActive: $isMenuActive)
+                    .frame(width: UIScreen.main.bounds.width * 1) // Adjust the width as needed
                     .offset(x: isMenuActive ? 0 : -UIScreen.main.bounds.width) // Apply the offset to control the slide-out animation
                     .animation(.easeInOut) // Apply animation
                     .zIndex(1) // Ensure the menu appears above the content
-                    
             }
             .modifier(InitialMenuActivationModifier(isMenuActive: $isMenuActive))
             .edgesIgnoringSafeArea(.all)
@@ -72,11 +117,6 @@ struct NewsFeedView: View {
                     isMenuActive.toggle()
                 }) {
                     Image(systemName: "line.horizontal.3")
-                        .font(.system(size: 24))
-                        .foregroundColor(.white)
-                },
-                trailing: NavigationLink(destination: ProfileView(), isActive: $isProfileActive) {
-                    Image(systemName: "person.circle")
                         .font(.system(size: 24))
                         .foregroundColor(.white)
                 }
@@ -107,36 +147,87 @@ struct InitialMenuActivationModifier: ViewModifier {
 
 struct MenuView: View {
     @Binding var isMenuActive: Bool
+    @State private var isProfileActive = false
     
     var body: some View {
         ZStack {
-            Color.white
+            Color.gray
                 .edgesIgnoringSafeArea(.all)
-           
+            
             VStack(spacing: 20) {
-                
-                Text("Senaste nyheterna")
-                Text("Sport")
-                Text("Kultur")
-                
+                Button(action: {
+                    isProfileActive = true
+                    isMenuActive = false // Close the menu
+                }) {
+                    Image(systemName: "person.crop.circle.fill")
+                        .font(.title)
+                        .foregroundColor(.white)
+                }
+                .padding()
+                .background(Color.gray)
+                .cornerRadius(10)
+                .padding(.horizontal, 20)
+                .onTapGesture {
+                    isProfileActive = true // Activate the profile view
+                }
                 
                 Button(action: {
-                    isMenuActive = false
+                    // Handle action for "Senaste nyheterna"
+                }) {
+                    Text("Senaste nyheterna")
+                        .font(.title)
+                        .foregroundColor(.white)
+                }
+                
+                Button(action: {
+                    // Handle action for "Sport"
+                }) {
+                    Text("Sport")
+                        .font(.title)
+                        .foregroundColor(.white)
+                }
+                
+                Button(action: {
+                    // Handle action for "Kultur"
+                }) {
+                    Text("Kultur")
+                        .font(.title)
+                        .foregroundColor(.white)
+                }
+                
+                Button(action: {
+                    isMenuActive = false // Close the menu
                 }) {
                     Image(systemName: "xmark.circle")
                         .font(.title)
                         .padding()
-                        .background(Color.white)
+                        .background(Color.gray)
                         .foregroundColor(.black)
                         .cornerRadius(10)
                         .padding(.top, 80)
                 }
             }
-            .font(.title)
             .padding()
+        }
+        .fullScreenCover(isPresented: $isProfileActive) {
+            NavigationView {
+                ProfileView()
+                    .navigationBarItems(leading: Button(action: {
+                        isProfileActive = false // Dismiss the profile view
+                    }) {
+                        Image(systemName: "chevron.left")
+                            .font(.title)
+                            .foregroundColor(.black)
+                    })
+            }
         }
     }
 }
+
+
+
+
+
 
 struct NewsFeedView_Previews: PreviewProvider {
     static var previews: some View {
