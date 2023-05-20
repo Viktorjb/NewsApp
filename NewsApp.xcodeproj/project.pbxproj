@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		31747DAF2A12CAFB00F316A1 /* AdminView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31747DAE2A12CAFB00F316A1 /* AdminView.swift */; };
+		33F0E4632A17B9DA00F291C0 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F0E4622A17B9DA00F291C0 /* Location.swift */; };
+		33F0E4652A17B9EC00F291C0 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F0E4642A17B9EC00F291C0 /* MapViewModel.swift */; };
+		33F0E4672A17B9F800F291C0 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F0E4662A17B9F800F291C0 /* MapView.swift */; };
 		5C6EB2312A10362700A94E04 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6EB2302A10362700A94E04 /* ContentViewModel.swift */; };
 		5C6EB2332A103EF700A94E04 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6EB2322A103EF700A94E04 /* ProfileView.swift */; };
 		5CCDFCA82A0FF47300FA8300 /* NAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCDFCA72A0FF47300FA8300 /* NAButton.swift */; };
@@ -61,6 +64,9 @@
 
 /* Begin PBXFileReference section */
 		31747DAE2A12CAFB00F316A1 /* AdminView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminView.swift; sourceTree = "<group>"; };
+		33F0E4622A17B9DA00F291C0 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		33F0E4642A17B9EC00F291C0 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		33F0E4662A17B9F800F291C0 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		5C6EB2302A10362700A94E04 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		5C6EB2322A103EF700A94E04 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		5CCDFCA72A0FF47300FA8300 /* NAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NAButton.swift; sourceTree = "<group>"; };
@@ -137,6 +143,7 @@
 				5CCDFCAA2A0FF73C00FA8300 /* User.swift */,
 				CB9D720C2A124EF100721DE7 /* Article.swift */,
 				7709B6DC2A12D503004DBE6F /* ArticleLists.swift */,
+				33F0E4622A17B9DA00F291C0 /* Location.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -161,6 +168,7 @@
 				CB9D72162A12705100721DE7 /* ArticleView.swift */,
 				7709B6DA2A12CA39004DBE6F /* AddArticleView.swift */,
 				31747DAE2A12CAFB00F316A1 /* AdminView.swift */,
+				33F0E4662A17B9F800F291C0 /* MapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -174,6 +182,7 @@
 				CB9D720E2A12656100721DE7 /* NewsFeedViewModel.swift */,
 				CB9D72122A1269DF00721DE7 /* ArticleViewModel.swift */,
 				7709B6DE2A13CAD8004DBE6F /* AddArticleViewModel.swift */,
+				33F0E4642A17B9EC00F291C0 /* MapViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -390,13 +399,16 @@
 				CB9D72152A12700500721DE7 /* NewsFeedView.swift in Sources */,
 				7709B6DF2A13CAD8004DBE6F /* AddArticleViewModel.swift in Sources */,
 				5CCDFCA82A0FF47300FA8300 /* NAButton.swift in Sources */,
+				33F0E4672A17B9F800F291C0 /* MapView.swift in Sources */,
 				5CCDFCAE2A0FF7AD00FA8300 /* Extensions.swift in Sources */,
 				5CCDFCAB2A0FF73C00FA8300 /* User.swift in Sources */,
 				CB9D720F2A12656100721DE7 /* NewsFeedViewModel.swift in Sources */,
 				CB9D72172A12705100721DE7 /* ArticleView.swift in Sources */,
+				33F0E4632A17B9DA00F291C0 /* Location.swift in Sources */,
 				7709B6DB2A12CA39004DBE6F /* AddArticleView.swift in Sources */,
 				CB9D720D2A124EF100721DE7 /* Article.swift in Sources */,
 				7709B6B32A0BD859004DBE6F /* ContentView.swift in Sources */,
+				33F0E4652A17B9EC00F291C0 /* MapViewModel.swift in Sources */,
 				5C6EB2332A103EF700A94E04 /* ProfileView.swift in Sources */,
 				7709B6DD2A12D503004DBE6F /* ArticleLists.swift in Sources */,
 				7709B6B12A0BD859004DBE6F /* NewsAppApp.swift in Sources */,
@@ -561,6 +573,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"NewsApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need your location, please.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -589,6 +603,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"NewsApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need your location, please.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
