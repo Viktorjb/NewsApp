@@ -35,6 +35,19 @@ class AddArticleViewModel: ObservableObject{
             // You can access the selected image here and perform the necessary operations
         }
     
+    func AproveArticle(article: Article){
+        do{
+            try db.collection("PublishedArticles").addDocument(from: article)
+            if let id = article.id{
+                db.collection("RequestedArticles").document(id).delete()
+            }
+            
+        } catch{
+            print("Error sending to Database")
+        }
+        
+    }
+    
     func listenToFireStore(){
                 
             db.collection("RequestedArticles").addSnapshotListener() {
