@@ -19,8 +19,8 @@ struct NewsAppApp: App {
     }
     var body: some Scene {
         WindowGroup {
-//            ContentView()
-            MapView()
+            ContentView()
+//            MapView()
         }
     }
 }
