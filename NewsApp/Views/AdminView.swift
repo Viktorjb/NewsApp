@@ -30,7 +30,7 @@ struct AdminView: View {
                         HStack{
                             Spacer()
                             Button(action: {
-                                // upload article to all users and delete it from the adminsView
+                                viewModel.AproveArticle(article: article)
                             }, label: {
                                 Text("Aprove Article")
                                     .frame(width: 130, height: 30)
