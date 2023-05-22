@@ -50,7 +50,7 @@ class AddArticleViewModel: ObservableObject{
     
     func listenToFireStore(){
                 
-            db.collection("PublishedArticles").addSnapshotListener() {
+            db.collection("RequestedArticles").addSnapshotListener() {
                     snapshot, error in
                     
                     guard let snapshot = snapshot else {return}
