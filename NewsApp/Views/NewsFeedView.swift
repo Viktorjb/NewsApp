@@ -14,6 +14,8 @@ struct NewsFeedView: View {
     @State private var menuOffset: CGFloat = -UIScreen.main.bounds.width
     @State private var latestNewsSelected = false
     @State private var allNewsSelected = false
+    @State private var selectedArticle: Article? = nil
+
     
     var body: some View {
         NavigationView {
@@ -73,31 +75,45 @@ struct NewsFeedView: View {
                     }
                     .background(Color.gray)
                     
-                    VStack {
-                        ScrollView {
-                            VStack {
-                                ForEach(viewModel.articles, id: \.heading) { article in
-                                    HStack {
-                                        Text(article.heading)
-                                            .font(.title)
-                                            .bold()
-                                            .padding(.leading, 10)
+                    NavigationView {
+                        VStack {
+                            ScrollView {
+                                VStack(spacing: 0) {
+                                    ForEach(viewModel.articles, id: \.heading) { article in
+                                        NavigationLink(
+                                            destination: ArticleView(article: article),
+                                            tag: article,
+                                            selection: $selectedArticle
+                                        ) {
+                                            HStack {
+                                                Text(article.heading)
+                                                    .font(.title)
+                                                    .bold()
+                                                    .padding(.leading, 10)
+                                                
+                                                Spacer()
+                                                
+                                                Image("Image")
+                                                    .resizable()
+                                                    .frame(width: 50, height: 50)
+                                                    .padding(10)
+                                            }
+                                        }
+                                        .buttonStyle(PlainButtonStyle())
                                         
-                                        Spacer()
-                                        
-                                        Image("Image")
-                                            .resizable()
-                                            .frame(width: 50, height: 50)
-                                            .padding(10)
+                                        Divider()
+                                        .padding(.horizontal, 10)
                                     }
                                 }
                             }
+                            .frame(maxHeight: .infinity)
+                            
+                            Spacer()
                         }
-                        .frame(maxHeight: .infinity) // Occupy the remaining available space
-                        
-                        Spacer() // Add a spacer to push the content above the toolbar
+                        .navigationBarTitle("", displayMode: .inline)
                     }
                 }
+
                 
                 // Menu view
                 MenuView(isMenuActive: $isMenuActive)
@@ -109,7 +125,7 @@ struct NewsFeedView: View {
             .modifier(InitialMenuActivationModifier(isMenuActive: $isMenuActive))
             .edgesIgnoringSafeArea(.all)
             .onAppear {
-                viewModel.articleMockData()
+                viewModel.getArticleFeed()
             }
             .navigationBarTitle("", displayMode: .inline) // Set an empty title to keep the navigation bar visible
             .navigationBarItems(
