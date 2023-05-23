@@ -18,15 +18,13 @@ class NewsFeedViewModel : ObservableObject {
     
     
     func articleMockData() {
-        let article1 = Article(heading: "Article 1", content: "This is the content of article 1.", category: "amusement")
+        let article1 = Article(heading: "Article 1", content: "This is the content of article 1.", category: "Amusement")
         let article2 = Article(heading: "Article 2", content: "This is the content of article 2.", category: "Foreign")
         let article3 = Article(heading: "Article 3", content: "This is the content of article 3.", category: "Sports")
 
             articles = [article1, article2, article3]
         }
-   
-    
-    
+
 }
 
 func getArticleFeed() {

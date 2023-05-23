@@ -7,6 +7,8 @@
 
 import Foundation
 import Firebase
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class ForeignNewsViewModel: ObservableObject{
     
@@ -22,10 +24,35 @@ class ForeignNewsViewModel: ObservableObject{
         }
     
     
-    func getForeignArticleFeed() {
-        let db = Firestore.firestore()
+    func listen2FS (){
         
-        
+        let itemsRef = db.collection("PublishedArticles").whereField("Category", in: ["Foreign"])
+          
+        itemsRef.addSnapshotListener() {
+            snapshot, err in
+            
+            guard let snapshot = snapshot else {return}
+            
+            if let err = err {
+                print("error\(err)")
+            } else {
+                
+                self.foreignArticles.removeAll()
+                
+                for document in snapshot.documents{
+                    
+                    do{
+                        
+                        let article = try document.data(as : Article.self)
+                        self.foreignArticles.append(article)
+                     print("vi hämtar")
+               
+                    } catch {
+                        print("Error")
+                    }
+                }
+            }
+        }
     }
 
 }

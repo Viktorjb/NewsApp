@@ -24,8 +24,7 @@ class SportsNewsViewModel: ObservableObject{
     
     func getSportsArticleFeed() {
         let db = Firestore.firestore()
-        
-        
+        db.collection("PublishedArticles")
     }
 
 }

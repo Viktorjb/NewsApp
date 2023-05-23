@@ -25,24 +25,6 @@ struct ForeignView: View {
                     }
                     .edgesIgnoringSafeArea(.top)
                     .frame(height: 110) // Adjust the height as needed
-                    HStack{
-                        ZStack {
-                            Text("Latest news")
-                                .font(.title2)
-                                .bold()
-                                .padding(.leading, 30)
-                                .foregroundColor(Color.white)
-                        }
-                        
-                        Rectangle()
-                            .fill(Color.orange)
-                            .frame(height: 2)
-                            .padding(.top, 45) // Adjust the padding to align the thin line with the selected button
-                        
-                    }
-                    
-                    Spacer()
-                    
                     VStack {
                         ScrollView {
                             VStack {
@@ -65,7 +47,7 @@ struct ForeignView: View {
                         }
                         .frame(maxHeight: .infinity) // Occupy the remaining available space
                         
-                        Spacer() // Add a spacer to push the cop                                              p
+                        Spacer() // Add a spacer to push the cop                                              
                     }
                 }
             }}
