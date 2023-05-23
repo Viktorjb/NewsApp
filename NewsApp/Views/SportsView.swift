@@ -45,7 +45,7 @@ struct SportsView: View {
                     VStack {
                         ScrollView {
                             VStack {
-                                ForEach($viewModel.sportsArticles, id: \.heading) { article in
+                                ForEach(viewModel.sportsArticles, id: \.heading) { article in
                                     HStack {
                                         Text(article.heading)
                                             .font(.title)

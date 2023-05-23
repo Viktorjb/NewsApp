@@ -14,6 +14,9 @@ struct NewsFeedView: View {
     @State private var menuOffset: CGFloat = -UIScreen.main.bounds.width
     @State private var latestNewsSelected = false
     @State private var allNewsSelected = false
+    @State var amusementView = false
+    @State var sportsView = false
+    @State var foreignView = false
     
     var body: some View {
         NavigationView {
@@ -150,81 +153,84 @@ struct MenuView: View {
     @State private var isProfileActive = false
     
     var body: some View {
-        ZStack {
-            Color.gray
-                .edgesIgnoringSafeArea(.all)
-            
-            VStack(spacing: 20) {
-                Button(action: {
-                    isProfileActive = true
-                    isMenuActive = false // Close the menu
-                }) {
-                    Image(systemName: "person.crop.circle.fill")
-                        .font(.title)
-                        .foregroundColor(.white)
-                }
-                .padding()
-                .background(Color.gray)
-                .cornerRadius(10)
-                .padding(.horizontal, 20)
-                .onTapGesture {
-                    isProfileActive = true // Activate the profile view
-                }
+        NavigationView{
+            ZStack {
+                Color.gray
+                    .edgesIgnoringSafeArea(.all)
                 
-                Button(action: {
-                    // Handle action for "Senaste nyheterna"
-                }) {
-                    Text("Nöje")
-                        .font(.title)
-                        .foregroundColor(.white)
-                }
-                
-                Button(action: {
-                    SportsView()
-                }) {
-                    Text("Sport")
-                        .font(.title)
-                        .foregroundColor(.white)
-                }
-                
-                Button(action: {
-                    // Handle action for "Kultur"
-                }) {
-                    Text("Kultur")
-                        .font(.title)
-                        .foregroundColor(.white)
-                }
-                
-                Button(action: {
-                    isMenuActive = false // Close the menu
-                }) {
-                    Image(systemName: "xmark.circle")
-                        .font(.title)
-                        .padding()
-                        .background(Color.gray)
-                        .foregroundColor(.black)
-                        .cornerRadius(10)
-                        .padding(.top, 80)
-                }
-            }
-            .padding()
-        }
-        .fullScreenCover(isPresented: $isProfileActive) {
-            NavigationView {
-                ProfileView()
-                    .navigationBarItems(leading: Button(action: {
-                        isProfileActive = false // Dismiss the profile view
+                VStack(spacing: 20) {
+                    Button(action: {
+                        isProfileActive = true
+                        isMenuActive = false // Close the menu
                     }) {
-                        Image(systemName: "chevron.left")
+                        Image(systemName: "person.crop.circle.fill")
                             .font(.title)
-                            .foregroundColor(.black)
-                    })
+                            .foregroundColor(.white)
+                            .font(.title)
+                    }
+                    .padding()
+                    .background(Color.gray)
+                    .cornerRadius(10)
+                    .padding(.horizontal, 20)
+                    .onTapGesture {
+                        isProfileActive = true // Activate the profile view
+                    }
+                    VStack{
+           
+                        NavigationLink(destination: AmusementView()){
+                            Text("Nöje")
+                                .font(.largeTitle)
+                                .foregroundColor(.white)
+                                .padding(.vertical, 20)
+                    }
+                            
+                    VStack{
+                        NavigationLink(destination: SportsView()){
+                            Text("Sport")
+                                .font(.largeTitle)
+                                .foregroundColor(.white)
+                    }
+                            
+                    VStack{
+                        NavigationLink(destination: ForeignView()){
+                            Text("Utrikes")
+                                .font(.largeTitle)
+                                .foregroundColor(.white)
+                            }
+                                Button(action: {
+                                    isMenuActive = false // Close the menu
+                                }) {
+                                    Image(systemName: "xmark.circle")
+                                        .font(.title)
+                                        .padding()
+                                        .background(Color.gray)
+                                        .foregroundColor(.black)
+                                        .cornerRadius(10)
+                                        .padding(.top, 80)
+                                }
+                            }
+                            .padding()
+                        }
+                        .fullScreenCover(isPresented: $isProfileActive) {
+                            NavigationView {
+                                ProfileView()
+                                    .navigationBarItems(leading: Button(action: {
+                                        isProfileActive = false // Dismiss the profile view
+                                    }) {
+                                        Image(systemName: "chevron.left")
+                                            .font(.title)
+                                            .foregroundColor(.black)
+                                    })
+                            }
+                        }
+                    }
+                }
+                
             }
+            
         }
     }
 }
-
-
 
 
 

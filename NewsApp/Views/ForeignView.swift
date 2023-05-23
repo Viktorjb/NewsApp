@@ -46,7 +46,7 @@ struct ForeignView: View {
                     VStack {
                         ScrollView {
                             VStack {
-                                ForEach($viewModel.foreignArticles, id: \.heading) { article in
+                                ForEach(viewModel.foreignArticles, id: \.heading) { article in
                                     HStack {
                                         Text(article.heading)
                                             .font(.title)

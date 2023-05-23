@@ -45,7 +45,7 @@ struct AmusementView: View {
                     VStack {
                         ScrollView {
                             VStack {
-                                ForEach($viewModel.amusementArticles, id: \.heading) { article in
+                                ForEach(viewModel.amusementArticles, id: \.heading) { article in
                                     HStack {
                                         Text(article.heading)
                                             .font(.title)
