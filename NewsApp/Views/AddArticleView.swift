@@ -15,6 +15,9 @@ struct AddArticleView: View {
     //For alert-popup
     @State var showingAlert = false
     
+    //Needed to be able to "dismiss" the view
+    @Environment(\.presentationMode) var presentation
+    
     var body: some View {
             VStack{
                 TextEditor(text: $viewModel.titleContent).padding(30).background(Color(red: 240/255, green: 240/255, blue: 245/255))
@@ -55,7 +58,9 @@ struct AddArticleView: View {
                     showingAlert = true
                 }
                 ).alert(viewModel.alertMessage, isPresented: $showingAlert) {
-                    Button("OK", role: .cancel) { }
+                    Button("OK", role: .cancel) {
+                        self.presentation.wrappedValue.dismiss() //Dismiss the view
+                    }
                 }
             }
             .background(Color(red: 240/255, green: 240/255, blue: 245/255))

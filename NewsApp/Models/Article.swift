@@ -15,7 +15,7 @@ struct Article : Codable, Identifiable, Hashable{
     var heading: String
     var content: String
     //var picture: UIImage? // Temporarily commented out to conform to "codable"
-    var category: Category? // Can be nil since we currently have articles on firebase without category
+    var category: Category? 
     
     func hash(into hasher: inout Hasher) {
            hasher.combine(heading)
