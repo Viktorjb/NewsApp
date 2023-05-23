@@ -174,13 +174,13 @@ struct MenuView: View {
                 Button(action: {
                     // Handle action for "Senaste nyheterna"
                 }) {
-                    Text("Senaste nyheterna")
+                    Text("Nöje")
                         .font(.title)
                         .foregroundColor(.white)
                 }
                 
                 Button(action: {
-                    // Handle action for "Sport"
+                    SportsView()
                 }) {
                     Text("Sport")
                         .font(.title)

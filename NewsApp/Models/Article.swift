@@ -14,15 +14,17 @@ struct Article : Codable, Identifiable{
     //var id = UUID()
     var heading: String
     var content: String
+    var category: String
     //var picture: UIImage? // Temporarily commented out to conform to "codable"
     
     
     private var unformattedDate = Date()
     //private let dateFormatter = DateFormatter() // Temporarily commented out to conform to "codable"
     
-    init(heading: String, content: String, picture: UIImage? = nil) {
+    init(heading: String, content: String, category: String, picture: UIImage? = nil) {
         self.heading = heading
         self.content = content
+        self.category = category
         //self.picture = picture // Temporarily commented out to conform to "codable"
         let dateFormatter = DateFormatter() // Temporarily moved here to conform to "codable"
         dateFormatter.dateStyle = .medium
