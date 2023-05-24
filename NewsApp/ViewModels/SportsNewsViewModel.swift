@@ -22,9 +22,28 @@ class SportsNewsViewModel: ObservableObject{
         }
     
     
-    func getSportsArticleFeed() {
-        let db = Firestore.firestore()
-        db.collection("PublishedArticles")
+    func getArticlesFromDb(){
+        sportsArticles.removeAll()
+        db.collection("PublishedArticles").getDocuments{ (querySnapshot, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+            } else {
+                do {
+                    guard let querySnapshot = querySnapshot else {
+                        print("No documents found")
+                        return
+                    }
+                    
+                    for document in querySnapshot.documents {
+                        let article = try document.data(as: Article.self)
+                        self.sportsArticles.append(article)
+                        
+                    }
+                } catch {
+                    print("Error decoding documents: \(error)")
+                }
+            }
+        }
     }
-
 }
+

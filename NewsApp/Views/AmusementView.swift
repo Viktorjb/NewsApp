@@ -67,7 +67,7 @@ struct AmusementView: View {
             .modifier(InitialMenuActivationModifier(isMenuActive: $isMenuActive))
             .edgesIgnoringSafeArea(.all)
             .onAppear {
-                viewModel.articleMockData()
+                viewModel.getArticlesFromDb()
             }
             .navigationBarTitle("", displayMode: .inline) // Set an empty title to keep the navigation bar visible
             .navigationBarItems(
