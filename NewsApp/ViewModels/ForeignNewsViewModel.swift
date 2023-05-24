@@ -16,9 +16,9 @@ class ForeignNewsViewModel: ObservableObject{
     @Published var foreignArticles = [Article]()
     
     func articleMockData() {
-        let article1 = Article(heading: "Article 1", content: "This is the content of foreign article 1.", category: "foreign")
-        let article2 = Article(heading: "Article 2", content: "This is the content of foreign article 2.", category: "foreign")
-        let article3 = Article(heading: "Article 3", content: "This is the content of foreign article 3.", category: "foreign")
+        let article1 = Article(heading: "ForeignArticle 1", content: "This is the content of foreign article 1.", category: "foreign")
+        let article2 = Article(heading: "ForeignArticle 2", content: "This is the content of foreign article 2.", category: "foreign")
+        let article3 = Article(heading: "ForeignArticle 3", content: "This is the content of foreign article 3.", category: "foreign")
 
         foreignArticles = [article1, article2, article3]
         }

@@ -9,6 +9,9 @@ import SwiftUI
 
 struct NewsFeedView: View {
     @StateObject var viewModel = NewsFeedViewModel()
+    @StateObject var sportsViewModel = SportsNewsViewModel()
+    @StateObject var amusementViewModel = AmusementNewsViewModel()
+    @StateObject var foreignViewModel = ForeignNewsViewModel()
     //@State private var isProfileActive: Bool = false
     @State private var isMenuActive: Bool = false
     @State private var menuOffset: CGFloat = -UIScreen.main.bounds.width
@@ -113,6 +116,9 @@ struct NewsFeedView: View {
             .edgesIgnoringSafeArea(.all)
             .onAppear {
                 viewModel.articleMockData()
+                sportsViewModel.articleMockData()
+                foreignViewModel.listen2FS()
+                amusementViewModel.articleMockData()
             }
             .navigationBarTitle("", displayMode: .inline) // Set an empty title to keep the navigation bar visible
             .navigationBarItems(
