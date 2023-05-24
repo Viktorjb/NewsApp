@@ -6,8 +6,6 @@
 //
 
 import XCTest
-import firebaseAuth
-import FdvvirebaseCore
 @testable import NewsApp
 
 final class NewsAppTests: XCTestCase {
