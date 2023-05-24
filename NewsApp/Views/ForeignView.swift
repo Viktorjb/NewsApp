@@ -35,21 +35,23 @@ struct ForeignView: View {
                     VStack {
                         ScrollView {
                             VStack {
-                                ForEach(viewModel.foreignArticles, id: \.heading) { article in
-                                    HStack {
-                                        Text(article.heading)
-                                            .font(.title)
-                                            .bold()
-                                            .padding(.leading, 10)
-                                        
-                                        Spacer()
-                                        
-                                        Image("Image")
-                                            .resizable()
-                                            .frame(width: 50, height: 50)
-                                            .padding(10)
+                                    ForEach(viewModel.foreignArticles, id: \.heading) { article in
+                                        HStack {
+                                            Text(article.heading)
+                                                .font(.title)
+                                                .bold()
+                                                .padding(.leading, 10)
+                                            
+                                            Spacer()
+                                            
+                                            Image("Image")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                                .padding(10)
+                                        }
                                     }
-                                }
+                                
+                                
                             }
                         }
                         .frame(maxHeight: .infinity) // Occupy the remaining available space

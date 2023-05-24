@@ -117,7 +117,7 @@ struct NewsFeedView: View {
             .onAppear {
                 viewModel.articleMockData()
                 sportsViewModel.articleMockData()
-                foreignViewModel.listen2FS()
+                foreignViewModel.getArticlesFromDb()
                 amusementViewModel.articleMockData()
             }
             .navigationBarTitle("", displayMode: .inline) // Set an empty title to keep the navigation bar visible

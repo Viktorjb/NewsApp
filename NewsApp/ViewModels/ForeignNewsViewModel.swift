@@ -24,33 +24,25 @@ class ForeignNewsViewModel: ObservableObject{
         }
     
     
-    func listen2FS (){
+    func getArticlesFromDb(){
         
-        let itemsRef = db.collection("PublishedArticles").whereField("Category", in: ["Foreign"])
-          
-        itemsRef.addSnapshotListener() {
-            snapshot, err in
+        db.collection("PublishedArticles").addSnapshotListener() {
+            snapshot, error in
             
             guard let snapshot = snapshot else {return}
-            
-            if let err = err {
-                print("error\(err)")
-            } else {
-                
+            if let error = error {
+                print("Error listning to FireStore \(error)")
+            }else{
                 self.foreignArticles.removeAll()
-                
                 for document in snapshot.documents{
-                    
                     do{
-                        
-                        let article = try document.data(as : Article.self)
+                        let article = try document.data(as: Article.self)
                         self.foreignArticles.append(article)
-                     print("vi hämtar")
-               
-                    } catch {
-                        print("Error")
+                    }catch{
+                        print("Error reading from FireStore")
                     }
                 }
+                
             }
         }
     }
